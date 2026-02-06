@@ -7,15 +7,12 @@
   [![Java Version](https://img.shields.io/badge/Java-8%2B-red?style=for-the-badge&logo=java)](https://www.oracle.com/java/)
   [![License](https://img.shields.io/badge/Licencia-MIT-blue?style=for-the-badge)](https://opensource.org/licenses/MIT)
   [![Build](https://img.shields.io/badge/Estado-Finalizado-success?style=for-the-badge)](https://github.com/Lukinfewa/cholo)
-
-  *"En este vestuario, el esfuerzo no se negocia y el código sucio se paga con el banquillo."*
 </div>
 
 <div align="center">
 
 
 ## 🌟 LA PIZARRA DE LAS ESTRELLAS 🌟
-*Haz clic en las tarjetas tácticas para saltar a la lección*
 
 <table>
   <tr>
@@ -73,8 +70,7 @@
 
 <br>
 
-## 🏅 LA GRAN FINAL: EL ENTRENAMIENTO
-*¿Estás listo para levantar la Orejona?*
+## ¿Estás listo para levantar la Orejona?
 
 <a href="#-sesión-de-entrenamiento-del-barro-al-gol">
   <img src="https://img.shields.io/badge/🏆_GÓNDOLA_DE_TROFEOS-15_NIVELES_DE_ENTRENAMIENTO_REAL-D4AF37?style=for-the-badge&logo=goldenline&logoColor=black" width="100%" />
