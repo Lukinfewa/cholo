@@ -637,12 +637,3 @@ public class MercadoFichajes {
 13. **Fichaje Relámpago:** Busca un jugador en un `Optional`. Si existe y su sueldo es mayor a 1M, aplícale un descuento del 10% (map) y si no, lanza una excepción `RuntimeException` (orElseThrow).
 14. **Scouting Internacional:** Tienes una lista de Clubes y cada Club tiene una lista de Jugadores. Usa `flatMap` para obtener una única lista con TODOS los jugadores de todos los clubes.
 15. **Presión Asfixiante:** Ejecuta un proceso de filtrado complejo sobre 1 millón de datos de jugadores usando `parallelStream` para demostrarle al profesor que sabes cómo ganar tiempo en el partido.
-
----
-<div align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGJycjRyeXByeHJyeHJyeHJyeHJyeHJyeHJyeHJyeHJyeHJyeHJyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKpXXqDDSVIBfH2/giphy.gif" width="150px" />
-  <br>
-  <b>¿Dudas tácticas? Abre un "Issue" en el tablón del vestuario.</b>
-  <br>
-  <i>"El fútbol, como el código, es un juego de errores. El que comete menos, gana."</i>
-</div>
