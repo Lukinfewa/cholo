@@ -240,22 +240,22 @@ Java ya nos da un "once ideal" de interfaces preparadas en el paquete `java.util
 
 1.  **`Predicate<T>` (El Ojeador / El Árbitro):**
     *   **Misión:** Analizar a un jugador y decir `true` o `false`.
-    *   **Ejemplo:** `j -> j.getEdad() < 20` (¿Es un canterano?).
+    *   **Ejemplo:** `jugador -> jugador.getEdad() < 20` (¿Es un canterano?).
     *   **Uso:** Se usa en los filtros para decidir quién sigue en la jugada.
 
 2.  **`Function<T, R>` (El Enlace / El Creador):**
     *   **Misión:** Recibir un balón y devolver una asistencia. Transforma un dato en otro.
-    *   **Ejemplo:** `j -> j.getSueldo()` (Recibo al jugador, devuelvo un número).
+    *   **Ejemplo:** `crack -> j¡crack.getSueldo()` (Recibo al jugador, devuelvo un número).
     *   **Uso:** Fundamental en el mapeo de datos.
 
 3.  **`Consumer<T>` (El Rematador / El Finalizador):**
     *   **Misión:** Recibir el balón y terminar la jugada. No devuelve nada, solo actúa.
-    *   **Ejemplo:** `j -> System.out.println(j)` (Recibo al jugador y lo imprimo en la ficha).
+    *   **Ejemplo:** `titular -> System.out.println(titular)` (Recibo al jugador y lo imprimo en la ficha).
     *   **Uso:** Para ejecutar acciones finales sobre los datos.
 
 4.  **`Supplier<T>` (El Canterano / El Utillero):**
     *   **Misión:** No recibe nada, pero siempre tiene un balón nuevo preparado. Provee datos.
-    *   **Ejemplo:** `() -> new Jugador()` (Crea un jugador nuevo de la nada).
+    *   **Ejemplo:** `() -> new Jugador("Canterano")` (Crea un jugador nuevo de la nada).
     *   **Uso:** Para generar o suministrar objetos cuando se necesitan.
 
 
@@ -342,7 +342,7 @@ List<String> plantilla = Arrays.asList("Griezmann", "Koke", "Oblak", "Correa");
 
 // Solo pasan los que tienen más de 5 letras en su nombre
 plantilla.stream()
-    .filter(j -> j.length() > 5) 
+    .filter(jugador -> jugador.length() > 5) 
     .forEach(System.out::println); // Resultado: Griezmann, Correa
 ```
 
@@ -396,14 +396,14 @@ Aquí se acaba la charla técnica. Las **operaciones terminales** disparan la ac
 Dar una orden a cada jugador que ha llegado al final de la jugada.
 ```java
 plantilla.stream()
-    .forEach(j -> System.out.println("¡A sudar la camiseta, " + j + "!"));
+    .forEach(jugador -> System.out.println("¡A sudar la camiseta, " + jugador + "!"));
 ```
 
 ### 5.2. `.collect()` - El Autobús del Equipo
 Recoge a los supervivientes y los mete en una lista o conjunto nuevo.
 ```java
 List<String> convocados = plantilla.stream()
-    .filter(j -> j.startsWith("G"))
+    .filter(jugador -> jugador.startsWith("G"))
     .collect(Collectors.toList()); // Metemos a Griezmann en la lista
 ```
 
@@ -421,7 +421,7 @@ int totalGoles = golesPorPartido.stream()
 ¿Cuántos jugadores quedan después de los filtros?
 ```java
 long numeroDelanteros = plantilla.stream()
-    .filter(j -> j.contains("DL"))
+    .filter(jugador -> jugador.contains("DL"))
     .count();
 ```
 
@@ -430,7 +430,7 @@ Comprobaciones rápidas que devuelven `true` o `false`.
 ```java
 // ¿Hay algún jugador que se llame "Messi"?
 boolean tenemosAMessi = plantilla.stream()
-    .anyMatch(j -> j.equals("Messi")); // Resultado: false (seguimos currando)
+    .anyMatch(jugador -> jugador.equals("Messi")); // Resultado: false (seguimos currando)
 ```
 
 ### 5.6. `.toArray()` - Formación Clásica
@@ -525,7 +525,7 @@ String portero = listaPorteros.findAny()
 Controlamos los dos escenarios de forma limpia, como una jugada ensayada de pizarra.
 ```java
 delantero.ifPresentOrElse(
-    j -> System.out.println("¡Gol de " + j + "!"), // Plan A
+    jugador -> System.out.println("¡Gol de " + jugador + "!"), // Plan A
     () -> System.out.println("Nadie remató el centro...") // Plan B
 );
 ```
@@ -568,7 +568,7 @@ public class ChampionsLeague {
 
         // LA JUGADA MAESTRA
         List<String> convocados = plantilla.stream()
-            .filter(j -> j.getEnergia() > 70)                 // 1. El filtro del preparador físico
+            .filter(jugador -> jugador.getEnergia() > 70)                 // 1. El filtro del preparador físico
             .sorted(Comparator.comparing(Jugador::getCoraje).reversed()) // 2. De más coraje a menos
             .limit(3)                                        // 3. El 11 inicial (en este caso 3)
             .map(Jugador::getNombre)                         // 4. Solo quiero sus nombres para el acta
