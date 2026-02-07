@@ -481,7 +481,7 @@ Hay tres formas de preparar este informe médico:
 
 ```java
 // 1. Seguro de que está (si es null, peta)
-Optional<String> estrella = Optional.of("Griezmann");
+Optional<String> estrella = Optional.of("Cazorla");
 
 // 2. Puede que esté o no (si es null, queda vacío)
 String duda = obtenerFichajeDeUltimaHora(); 
